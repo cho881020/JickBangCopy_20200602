@@ -30,6 +30,9 @@ class RoomAdapter(context: Context, resId: Int, list: List<Room>) : ArrayAdapter
 
         val data = mList[position]
 
+        priceTxt.text = data.getFormmatedPrice()
+
+        addressAndFloorTxt.text = "${data.address}, ${data.getFormmatedFloor()}"
 
         descTxt.text = data.description
 
