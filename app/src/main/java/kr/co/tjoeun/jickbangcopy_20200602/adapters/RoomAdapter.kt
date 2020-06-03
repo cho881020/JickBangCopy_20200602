@@ -19,12 +19,16 @@ class RoomAdapter(context: Context, resId: Int, list: List<Room>) : ArrayAdapter
 
         var tempRow = convertView
 
-        if (tempRow == null) {
+        tempRow?.let {
+//            null이 아닐때 실행할 내용
+        }.let {
+//            null이 맞을때 실행
             tempRow = inf.inflate(R.layout.room_list_item, null)
         }
+
         val row = tempRow!!
 
-        val priceTxt = row.findViewById<TextView>(R.id.priceTxt)
+        val priceTxt = row?.findViewById<TextView>(R.id.priceTxt)
         val addressAndFloorTxt = row.findViewById<TextView>(R.id.addressAndFloorTxt)
         val descTxt = row.findViewById<TextView>(R.id.descTxt)
 
