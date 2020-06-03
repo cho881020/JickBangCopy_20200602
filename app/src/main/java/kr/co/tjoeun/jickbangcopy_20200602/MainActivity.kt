@@ -1,5 +1,6 @@
 package kr.co.tjoeun.jickbangcopy_20200602
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,6 +20,14 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        roomListView.setOnItemClickListener { parent, view, position, id ->
+            val clickedRoom = roomArrayList[position]
+
+            val myIntent = Intent(mContext, ViewRoomDetailActivity::class.java)
+            myIntent.putExtra("roomData", clickedRoom)
+            startActivity(myIntent)
+        }
 
     }
 

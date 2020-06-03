@@ -1,9 +1,10 @@
 package kr.co.tjoeun.jickbangcopy_20200602.datas
 
+import java.io.Serializable
 import java.text.NumberFormat
 import java.util.*
 
-class Room(val price:Int, val address:String, val floor:Int, val description:String) {
+class Room(val price:Int, val address:String, val floor:Int, val description:String) : Serializable {
 
     fun getFormmatedPrice() : String {
 
