@@ -23,7 +23,11 @@ class ViewRoomDetailActivity : BaseActivity() {
     override fun setValues() {
         mRoom = intent.getSerializableExtra("roomData") as Room
 
+        priceTxt.text = mRoom.getFormmatedPrice()
         descTxt.text = mRoom.description
+
+        addressTxt.text = mRoom.address
+        floorTxt.text = mRoom.getFormmatedFloor()
     }
 
 }
